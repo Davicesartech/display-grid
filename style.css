@@ -1,0 +1,452 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Montserrat;
+
+}
+
+body {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+
+}
+
+nav {
+  background-color: white;
+
+}
+
+.fotoscontainer {
+  display: flex;
+  height: 100vh;
+
+}
+
+#calango {
+  background-image: url(imgs/5.jpg.webp);
+  order: -1;
+  flex-grow: 5;
+}
+
+#mulher {
+  background-image: url(imgs/1.jpg.webp);
+}
+
+#cao {
+  background-image: url(imgs/2.jpg.webp);
+}
+
+#mar {
+  background-image: url(imgs/3.jpg.webp);
+}
+
+#carro {
+  background-image: url(imgs/4.jpg.webp);
+}
+
+.itens-gal {
+  flex-grow: 1;
+  background-size: cover;
+  background-position: 20% 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
+  transition: 0.5s;
+  overflow: hidden;
+  position: relative;
+}
+
+.itens-gal:hover {
+  flex-grow: 8;
+  background-color: transparent;
+  z-index: 2;
+
+}
+
+.itens-gal:hover .textin {
+  opacity: 1;
+}
+
+.itens-gal:hover #calango {
+  flex-grow: 6;
+  background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+.menu {
+  width: 120px;
+    height: 120px;
+    background-color: #0f0f0f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 10vh;
+}
+
+
+#check:checked~.menuescondido {
+  left: 0;
+
+}
+
+.svgmenu {
+  fill: white;
+  height: 40px;
+
+
+}
+
+.svgface {
+  fill: black;
+  display: flex;
+
+
+}
+
+.icones {
+  display: flex;
+  flex-direction: column; /* ou row */
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+   /* ou 1px, escolha um */
+}
+
+
+
+.textin {
+  padding-left: 20px;
+  position: absolute;
+  bottom: 10%;
+  color: white;
+  opacity: 0;
+  transition-duration: 0.3s;
+}
+
+.textin h6 {
+
+  margin-left: 10px;
+  font-size: 12px;
+  text-align: center;
+  width: 80px;
+  height: 25px;
+  border-radius: 3px;
+  background-color: white;
+  font-weight: 500;
+  color: rgb(17, 0, 255);
+}
+
+.textin h2 {
+
+  font-size: 60px;
+  font-weight: 700;
+  color: #fff;
+  padding-bottom: 15px;
+
+}
+
+.author {
+  height: 60px;
+  width: 60px;
+  border-radius: 30px;
+  background-size: cover;
+
+}
+
+.autor {
+  display: flex;
+}
+
+.autor p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  padding-top: 5px;
+  padding-left: 5px;
+
+}
+
+
+#check {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  top: 5%;
+  opacity: 1;
+}
+
+#botaodentro {
+
+  height: 40px;
+  width: 40px;
+  opacity: 1;
+  position: absolute;
+  top: 4.5%;
+}
+
+.menuescondido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: -270px;
+  top: 0;
+  height: 120vh;
+  width: 380px;
+  background-color: white;
+  z-index: 99;
+
+}
+
+.botoes2 input {
+
+  width: 100%;
+  height: 100px;
+}
+
+.botao {
+  background-color: aquamarine;
+  height: 100%;
+  width: 100%;
+}
+
+
+
+ul {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.svgmenudentro {
+  height: 40px;
+  fill: white;
+}
+
+
+
+/* Remove padrão do input */
+#check {
+  appearance: none;
+  -webkit-appearance: none;
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  z-index: 1000;
+  cursor: pointer;
+  top: 4%;
+
+}
+
+/* Posição do botão de menu */
+.menu-icon {
+  position: relative;
+  height: 40px;
+  width: 40px;
+
+  z-index: 999;
+}
+
+/* Estilo dos ícones */
+.icon-open,
+.icon-close {
+  fill: white;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* Mostrar ícone correto dependendo do estado */
+#check:not(:checked)~.menu-icon .icon-open {
+  opacity: 1;
+}
+
+#check:checked~.menu-icon .icon-open {
+  opacity: 0;
+}
+
+#check:not(:checked)~.menu-icon .icon-close {
+  opacity: 0;
+}
+
+#check:checked~.menu-icon .icon-close {
+  opacity: 1;
+}
+
+/* Menu escondido */
+.menuescondido {
+  position: absolute;
+  left: -350px;
+  top: 0;
+  height: 100vh;
+  width: 350px;
+  background-color: white;
+  z-index: 998;
+  transition: left 0.3s ease;
+}
+
+/* Mostrar menu quando checkbox está marcado */
+#check:checked~.menu-icon+.menuescondido {
+  left: 0;
+}
+
+
+
+.botoes2 {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  width: 100%;
+  align-items: center;
+  justify-items: center;
+  background-color: #0f0f0f;
+  
+}
+
+.botao {
+  background-color: #2916e0;
+
+}
+
+.menuinterno {
+  background-color: #0f0f0f;
+  height: 9vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svgmenudentro {
+  height: 40px;
+  fill: white;
+}
+
+
+
+
+
+li {
+  margin: 10px 0;
+
+}
+
+
+
+.icones svg {
+  width: 30px;
+  line-height: 100px;
+  margin: 25Px 0;
+  width: 20px;
+
+}
+
+
+.logodentro {
+  height: 100px;
+  width: 140px;
+  border-radius: 20px;
+  object-fit: contain;
+  background-image: url(/logo/logo.png);
+}
+
+
+
+
+
+
+
+a.menuescondido {
+  position: absolute;
+  /* pode manter */
+  left: -350px;
+  top: 0;
+  height: 100vh;
+  width: 350px;
+  background-color: white;
+  z-index: 998;
+  transition: left 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  /* position relative para footer */
+  position: relative;
+}
+
+#dropdown-click {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  font-size: 36px;
+  color: #b2b2b2;
+  overflow-y: auto;
+
+  flex: 1;
+}
+.lista{
+  color:#b2b2b2;
+  text-decoration: none;
+}
+
+.Home {
+  color: #2916e0;
+  text-decoration: none;
+
+}
+#botoes-menu{
+  margin-top: 50px;
+}
+
+.footer-list {
+  height: 5vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  
+  text-align: center;
+
+}
+
+.footer-list li {
+  margin: 0 10px;
+
+
+}
+
+
+
+
+.svgfacedentro {
+  
+  margin-right: 0px;
+    /* tirar position absolute para não bagunçar */
+    fill: #b2b2b2;
+    margin-left:10px;
+    width: 20px;
+    height: 20px;
+}
+.paragrafo{
+  margin-top: 40px;
+  color: #636363;
+  font-size: 16px;
+  padding: 0 30px;
+}
+.coracao{
+ padding-top: 5px;
+ padding-left: 5px;
+  height: 18px;
+  fill: red;
+}
+.colorib{
+  text-decoration: none;
+  color:#b2b2b2;
+}
+.colorib:hover{
+ color:#2916e0;
+}

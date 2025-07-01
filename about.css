@@ -1,0 +1,514 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Montserrat;
+
+}
+
+body {
+    margin-left: 120px;
+    overflow: hidden;
+    /* O conteúdo principal começa após o nav fixo */
+    /* Removido display: grid e grid-template-columns */
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 120px;
+    height: 100vh;
+    background-color: #ffffff;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+
+.menu {
+    width: 120px;
+    height: 120px;
+    background-color: #0f0f0f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 10vh;
+  
+}
+
+
+#check:checked~.menuescondido {
+    left: 0;
+
+}
+
+.svgmenu {
+    fill: white;
+    height: 40px;
+
+
+}
+
+.svgface {
+    fill: black;
+    display: flex;
+
+
+}
+
+.icones {
+    display: flex;
+    flex-direction: column;
+    /* ou row */
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    /* ou 1px, escolha um */
+}
+
+
+#botaodentro {
+
+    height: 40px;
+    width: 40px;
+    opacity: 1;
+    position: absolute;
+    top: 4.5%;
+}
+
+
+
+
+.botoes2 input {
+    width: 100%;
+    height: 100px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.botao {
+    background-color: aquamarine;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+
+
+ul {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.svgmenudentro {
+    height: 40px;
+    fill: white;
+}
+
+
+/* Remove padrão do input */
+#check {
+    appearance: none;
+    -webkit-appearance: none;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    z-index: 1000;
+    cursor: pointer;
+    top: 4%;
+
+}
+
+/* Posição do botão de menu */
+.menu-icon {
+    position: relative;
+    height: 40px;
+    width: 40px;
+
+    z-index: 999;
+}
+
+/* Estilo dos ícones */
+.icon-open,
+.icon-close {
+    fill: white;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+/* Mostrar ícone correto dependendo do estado */
+#check:not(:checked)~.menu-icon .icon-open {
+    opacity: 1;
+}
+
+#check:checked~.menu-icon .icon-open {
+    opacity: 0;
+}
+
+#check:not(:checked)~.menu-icon .icon-close {
+    opacity: 0;
+}
+
+#check:checked~.menu-icon .icon-close {
+    opacity: 1;
+}
+
+/* Menu escondido */
+.menuescondido {
+    position: fixed;
+    left: -350px;
+    top: 0;
+    height: 100vh;
+    width: 350px;
+    max-width: 100vw;
+    background-color: white;
+    z-index: 998;
+    transition: left 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+   
+}
+
+/* Mostrar menu quando checkbox está marcado */
+#check:checked~.menu-icon+.menuescondido {
+    left: 0;
+}
+
+
+
+
+.botoes2 {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+    background-color: #0f0f0f;
+    min-width: 10vh;
+    
+    border: none;
+    }
+
+.botao {
+    background-color:#2916e0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+    border: none;   
+    padding-top: 16px ;
+    
+}
+
+.menuinterno {
+    background-color: #0f0f0f;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.svgmenudentro {
+    height: 40px;
+    fill: white;
+}
+
+
+
+
+
+li {
+    margin: 10px 0;
+
+}
+
+
+
+.icones svg {
+    width: 30px;
+    line-height: 100px;
+    margin: 25Px 0;
+    width: 20px;
+
+}
+
+
+.logodentro {
+    height: 100px;
+    width: 140px;
+    border-radius: 20px;
+    object-fit: contain;
+    background-image: url(/logo/logo.png);
+}
+
+
+
+
+
+
+
+a.menuescondido {
+    position: absolute;
+    /* pode manter */
+    left: -350px;
+    top: 0;
+    height: 100vh;
+    width: 350px;
+    background-color: white;
+    z-index: 998;
+    transition: left 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    /* position relative para footer */
+    position: relative;
+}
+
+#dropdown-click {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    font-size: 36px;
+    color: #b2b2b2;
+    overflow-y: auto;
+
+    flex: 1;
+}
+
+.lista {
+    color: #b2b2b2;
+    text-decoration: none;
+}
+
+.Home {
+    color: #2916e0;
+    text-decoration: none;
+
+}
+
+
+.footer-list {
+    display: flex;
+
+
+}
+
+.footer-list li{
+    margin: 0 10px;
+}
+#botoes-menu{
+    margin-top: 50px;
+}
+
+
+.svgfacedentro {
+
+    margin-right: 0px;
+    fill: #b2b2b2;
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.paragrafo {
+    margin-top: 40px;
+    color: #636363;
+    font-size: 16px;
+    padding: 0 30px;
+}
+
+.coracao {
+    padding-top: 5px;   
+    padding-left: 5px;
+    height: 18px;
+    fill: red;
+}
+
+.colorib {
+    text-decoration: none;
+    color: #b2b2b2;
+}
+
+.colorib:hover {
+    color: #2916e0;
+}
+#grid-about{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+}
+#about-left{
+    height: 120vh;
+    background-color:  #2916e0;
+        display: flex;
+   flex-direction: column;
+    align-items: left;
+    justify-content: flex-start;
+}
+#about-right{
+    height: 120vh;
+    background-color: #ffffff;
+}
+#parteimg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    width: 90vh;
+   background-image: url('imgs/about-bg.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+    
+}
+.aboutimg {
+    width: 500px;
+    height: 500px;
+    object-fit: contain;
+
+    border-radius: 50%;
+}
+#texto {
+    height: 10vh;
+    padding-left: 45px;
+    
+    color: #ffffff;
+    font-size: 20px;display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin-top: 24px;
+}
+
+#texto p {
+    padding-top: 20px;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    font-size: 15px;
+    display: block;
+    margin-block-start: 1em;
+    text-align: left;
+}
+.btn-hello{
+        display: inline-block;
+    min-width: 160px;
+    padding: 9px 10px;
+    margin-bottom: 10px;
+    margin-right: 28px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 50px;
+    text-decoration: none;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+.btn-gmail{
+    display: inline-block;
+    font-style: italic;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+.bottun{
+      display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px; /* espaço entre os botões */
+}
+#text{
+        margin: 0 auto;
+    padding-left: 75px 
+}
+#text h2 {
+    padding-top: 30px;
+        display: inline-block;
+    padding-bottom: 8px;
+    border-bottom: 3px solid #2916e0;
+    margin-bottom: 20px;
+}
+#text p {
+       font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 9px;
+}
+.progress-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px;
+}
+
+.progress-circle {
+  width: 120px;
+  height: 140px; /* Aumentado para caber o texto */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.label {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+.circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: conic-gradient(blue 0% 0%, #e6e6e6 0%); /* valor padrão */
+}
+
+.percentage {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Porcentagens específicas */
+.p90 .circle {
+  background: conic-gradient(blue 0% 90%, #e6e6e6 0%);
+}
+
+.p75 .circle {
+  background: conic-gradient(blue 0% 95%, #e6e6e6 0%);
+}
+
+.p60 .circle {
+  background: conic-gradient(blue 0% 80%, #e6e6e6 0%);
+}
+
+.p45 .circle {
+  background: conic-gradient(blue 0% 85%, #e6e6e6 0%);
+}
